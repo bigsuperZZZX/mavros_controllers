@@ -52,7 +52,7 @@
   </include>
 
   <group if="$(arg visualization)">
-      <node type="rviz" name="rviz" pkg="rviz" args="-d $(find geometric_controller)/launch/config_file.rviz" />
+      <node type="rviz" name="rviz" pkg="rviz" args="-d $(find humantracking_controller)/launch/config_file.rviz" />
   </group>
 
 </launch>
