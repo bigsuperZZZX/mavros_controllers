@@ -1,5 +1,5 @@
 <launch>
-  <arg name="mav_name" default="iris"/>
+  <arg name="mav_name" default="typhoon_h480"/>
   <arg name="fcu_url" default="udp://:14540@127.0.0.1:14557"/>
   <arg name="gcs_url" default="" />
   <arg name="tgt_system" default="1" />
@@ -17,6 +17,13 @@
           <param name="ctrl_mode" value="$(arg command_input)" />
           <param name="enable_sim" value="$(arg gazebo_simulation)" />
           <param name="enable_gazebo_state" value="true"/>
+          <param name="attctrl_constant" value="0.3"/>
+          <param name="Kp_x" value="8.0" />
+          <param name="Kp_y" value="8.0" />
+          <param name="Kp_z" value="8.0" />
+          <param name="Kv_x" value="3.5" />
+          <param name="Kv_y" value="3.5" />
+          <param name="Kv_z" value="3.3" />
   </node>
 
   <node pkg="trajectory_publisher" type="trajectory_publisher" name="trajectory_publisher" output="screen">
@@ -24,9 +31,6 @@
         <param name="shape_omega" value="1.2" />
         <param name="initpos_z" value="2.0" />
         <param name="max_acc" value="10.0" />
-        <param name="Kpos_x" value="8.0" />
-        <param name="Kpos_y" value="8.0" />
-        <param name="Kpos_z" value="30.0" />
         <param name="reference_type" value="2" />
   </node>
 
